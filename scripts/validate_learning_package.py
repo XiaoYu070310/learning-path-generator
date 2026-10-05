@@ -10,7 +10,7 @@ from pathlib import Path
 from urllib.parse import unquote
 
 
-LEARNER_DIRS = ("projects", "journal")
+LEARNER_DIRS = ("projects", "journal", "notes")
 REQUIRED_EXACT = ("01_资料使用顺序.md", "02_学习环境与工具.md", "03_学习计划与阶段验收.md")
 UNWANTED_SUFFIXES = {
     ".exe", ".msi", ".dll", ".so", ".dylib", ".o", ".obj", ".pdb",
@@ -72,6 +72,9 @@ def check_structure(root: Path, results: Results) -> None:
     books = root / "books"
     if not books.is_dir():
         results.warn("Missing books/ directory; acceptable only if no long resources are useful")
+
+    if not (root / "AGENTS.md").is_file():
+        results.error("Missing tutor specification: AGENTS.md")
 
     for name in LEARNER_DIRS:
         directory = root / name

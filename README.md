@@ -6,7 +6,7 @@
 
 ## 中文
 
-`learning-path-generator` 是一个用于生成结构化本地学习资料包的 Agent Skill，适用于初学者或者进阶学习。它可以把“我想学习 C++”“帮我准备英语四级”或“制作一套 HPC 学习资料”等请求，转换成一组有明确顺序的学习文件，其中包括学习路线、阶段指南、资源索引、实践任务说明、验收标准和复盘方法，但是建议的食用方式是详细的描述你的学习目标，学习时长，已经掌握的内容等以便更个性化定制你的学习路线。
+`learning-path-generator` 是一个用于生成结构化本地学习资料包的 Agent Skill，适用于初学者或者进阶学习。它可以把“我想学习 C++”“帮我准备英语四级”或“制作一套 HPC 学习资料”等请求，转换成一组有明确顺序的学习文件，其中包括学习路线、阶段指南、资源索引、实践任务说明、验收标准、复盘方法，以及一份让后续 AI 会话能接续教学的 `AGENTS.md` 私教工作规范，但是建议的食用方式是详细的描述你的学习目标，学习时长，已经掌握的内容等以便更个性化定制你的学习路线。
 
 这个 Skill 遵循一个简单原则：学习资料应该引导学习者亲自实践，而不是代替学习者完成训练。
 
@@ -16,6 +16,7 @@
 
 ```text
 主题学习资料包/
+|-- AGENTS.md       # AI 私教工作规范，教学中持续生效
 |-- 00_先看我_[主题]学习总图.md
 |-- 01_资料使用顺序.md
 |-- 02_学习环境与工具.md
@@ -23,17 +24,18 @@
 |-- references/
 |-- books/
 |-- tools/          # 可选
+|-- notes/          # 保持为空，教学中由 AI 写入复习笔记
 |-- projects/       # 保持为空，留给学习者实践
-`-- journal/        # 保持为空，留给学习者复盘
+`-- journal/        # 保持为空，教学中由 AI 记录教学进度
 ```
 
 具体文件会根据学习领域自动调整。例如，C++ 学习资料会重点覆盖代码、编译、调试和测试；
 
 ### 重要边界
 
-`projects/` 和 `journal/` 必须保持为空。这两个目录只用于保存学习者自己完成的项目和复盘。Skill 不会在其中预先放入练习、答案、代码、日志、虚假结果或代写复盘。
+`notes/`、`projects/` 和 `journal/` 在生成时必须保持为空。`projects/` 只用于保存学习者自己完成的项目；`notes/`（复习笔记）和 `journal/`（教学进度）由 AI 在后续教学中按 `AGENTS.md` 的规则填写。Skill 不会在其中预先放入练习、答案、代码、日志、虚假结果、示例笔记或代写复盘。
 
-Git 无法跟踪空目录。如果生成的学习资料包需要提交到 GitHub，请在克隆后由学习者自行创建这两个目录。本项目不建议使用 `.gitkeep`，因为这会使目录不再为空。
+Git 无法跟踪空目录。如果生成的学习资料包需要提交到 GitHub，请在克隆后由学习者自行创建这三个目录。本项目不建议使用 `.gitkeep`，因为这会使目录不再为空。
 
 ### 安装方法
 
@@ -133,7 +135,7 @@ LICENSE                   MIT 许可证
 python scripts/validate_learning_package.py path/to/topic-learning-package
 ```
 
-验证器会检查必需的导航文件、Markdown 相对链接、意外写入的个人路径、不需要的二进制文件、未替换的模板占位符，以及 `projects/` 和 `journal/` 是否真正保持为空。
+验证器会检查必需的导航文件、`AGENTS.md` 私教工作规范、Markdown 相对链接、意外写入的个人路径、不需要的二进制文件、未替换的模板占位符，以及 `projects/`、`journal/` 和 `notes/` 是否真正保持为空。
 
 ### 适用范围
 
@@ -145,7 +147,7 @@ MIT
 
 ## English(Translated by AI)
 
-`learning-path-generator` is an Agent Skill that creates structured, local learning-material packages for both beginners and advanced learners. It turns requests such as “I want to learn C++,” “help me prepare for CET-4,” or “make an HPC study kit” into an ordered set of files containing a roadmap, phase guides, resource indexes, practice specifications, acceptance criteria, and review guidance. For the best results, describe your learning goals, available study time, and existing knowledge in detail so the generated learning path can be tailored to you.
+`learning-path-generator` is an Agent Skill that creates structured, local learning-material packages for both beginners and advanced learners. It turns requests such as “I want to learn C++,” “help me prepare for CET-4,” or “make an HPC study kit” into an ordered set of files containing a roadmap, phase guides, resource indexes, practice specifications, acceptance criteria, review guidance, and an `AGENTS.md` tutor specification that lets future AI sessions continue the teaching. For the best results, describe your learning goals, available study time, and existing knowledge in detail so the generated learning path can be tailored to you.
 
 This Skill follows one simple principle: learning materials should guide learners through their own practice rather than complete the training for them.
 
@@ -155,6 +157,7 @@ A typical learning package has this structure:
 
 ```text
 topic-learning-package/
+|-- AGENTS.md       # tutor specification, keeps AI teaching sessions consistent
 |-- 00_先看我_[主题]学习总图.md
 |-- 01_资料使用顺序.md
 |-- 02_学习环境与工具.md
@@ -162,17 +165,18 @@ topic-learning-package/
 |-- references/
 |-- books/
 |-- tools/          # optional
+|-- notes/          # kept empty; the AI tutor writes review notes here during teaching
 |-- projects/       # kept empty for learner practice
-`-- journal/        # kept empty for learner reviews
+`-- journal/        # kept empty; the AI tutor records teaching progress here
 ```
 
 The exact files adapt to the learning domain. For example, a C++ package emphasizes coding, compilation, debugging, and testing.
 
 ### Important Boundary
 
-`projects/` and `journal/` must remain empty. These directories are reserved for projects and reviews created by the learner. The Skill does not pre-fill them with exercises, answers, code, logs, fabricated results, or ghostwritten reflections.
+`notes/`, `projects/`, and `journal/` must remain empty at generation time. `projects/` is reserved for work created by the learner; `notes/` (review notes) and `journal/` (teaching progress) are filled by the AI tutor during teaching, following the rules in `AGENTS.md`. The Skill does not pre-fill them with exercises, answers, code, logs, fabricated results, sample notes, or ghostwritten reflections.
 
-Git cannot track empty directories. If a generated learning package is committed to GitHub, the learner should create these directories after cloning. This project intentionally does not recommend `.gitkeep`, because it would make the directories non-empty.
+Git cannot track empty directories. If a generated learning package is committed to GitHub, the learner should create these three directories after cloning. This project intentionally does not recommend `.gitkeep`, because it would make the directories non-empty.
 
 ### Installation
 
@@ -272,7 +276,7 @@ LICENSE                   MIT License
 python scripts/validate_learning_package.py path/to/topic-learning-package
 ```
 
-The validator checks required navigation files, relative Markdown links, accidental personal paths, unwanted binary files, unresolved template placeholders, and whether `projects/` and `journal/` are truly empty.
+The validator checks required navigation files, the `AGENTS.md` tutor specification, relative Markdown links, accidental personal paths, unwanted binary files, unresolved template placeholders, and whether `projects/`, `journal/`, and `notes/` are truly empty.
 
 ### Scope
 

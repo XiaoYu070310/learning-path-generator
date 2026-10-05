@@ -50,6 +50,10 @@ Connect time to outcomes:
 - acceptance checks and remediation when a check fails;
 - adjustment rules after illness, exams, work, or unexpected difficulty.
 
+### `AGENTS.md`
+
+The tutor specification that governs every future AI teaching session in this folder. Derive it from `assets/agents-md-template.md` and adapt it to the learner, domain, and machine; see the tutor specification section in `SKILL.md` for the required content. It is an authored document like the root guides: no unresolved placeholders, and no environment facts that were not actually established.
+
 ## `references/`
 
 Put detailed authored learning guidance here. A useful reference document normally contains:
@@ -103,13 +107,15 @@ Create only when the domain benefits from reusable, non-answer artifacts, such a
 
 Do not put completed practice, starter solutions, opaque executables, downloaded installers, or generated build artifacts here. Prefer source and instructions.
 
-## `projects/` and `journal/`
+## `notes/`, `projects/`, and `journal/`
 
-Create both directories and leave them completely empty.
+Create all three directories and leave them completely empty.
 
 - Practice descriptions belong in `references/`.
 - Review instructions belong in `references/82_周复盘说明.md`.
-- The learner creates every project, result, and journal entry.
+- `projects/` receives everything the learner creates: code, experiments, results.
+- `notes/` receives the learner's long-term review material, written by the AI tutor per `AGENTS.md` — one file per study block, not a chat log.
+- `journal/` receives the tutor's teaching progress log and later review summaries.
 - Do not add README files, templates, `.gitkeep`, hidden files, or sample content.
 
 If a package will be stored in Git, explain outside these directories that Git does not track empty directories.

@@ -1,6 +1,6 @@
 # Domain Adaptation
 
-Choose the learning loop that matches the subject. The directory architecture is shared; the pedagogy is not.
+Choose the learning loop that matches the subject. The directory architecture is shared; the pedagogy is not. The same applies to the `AGENTS.md` tutor specification: the teaching loop it defines — one concept at a time, verification with real work, consolidated review notes in `notes/`, and a progress log in `journal/` — is shared, while what counts as verification and what the notes record differ by domain.
 
 ## Programming and engineering
 

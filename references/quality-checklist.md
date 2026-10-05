@@ -15,6 +15,7 @@ Use this checklist after generation and before reporting completion.
 - [ ] `00_先看我` gives a clear map and today's first action.
 - [ ] `01_资料使用顺序` distinguishes required, optional, and lookup material.
 - [ ] Environment/tools guidance fits the domain.
+- [ ] `AGENTS.md` is adapted to the learner, domain, and environment, with no unresolved placeholders.
 - [ ] Phase names and order match across all root documents.
 - [ ] Detailed documents are linked rather than duplicated.
 - [ ] Relative links resolve.
@@ -33,6 +34,7 @@ Use this checklist after generation and before reporting completion.
 
 - [ ] `projects/` exists and is completely empty.
 - [ ] `journal/` exists and is completely empty.
+- [ ] `notes/` exists and is completely empty.
 - [ ] No personal training files were copied.
 - [ ] No completed exercises, solutions, fake results, or filled reviews are presented as learner work.
 - [ ] Practice specifications live outside learner directories.

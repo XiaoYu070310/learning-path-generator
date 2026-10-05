@@ -4,53 +4,57 @@
     {
       "id": 1,
       "prompt": "我是大一学生，只会一点 Python，没有系统学过编译和调试。请在指定输出目录制作一套学习 C++ 的辅助文件，我每周能投入 8 小时，希望半年后能独立完成一个中型命令行项目。",
-      "expected_output": "A Chinese C++ learning package tailored to a Python beginner, progressing through toolchain, modern C++, memory/lifetime, debugging/testing, engineering, and independent projects. It must contain navigable root documents, measurable phase exits, an empty projects directory, and an empty journal directory.",
+      "expected_output": "A Chinese C++ learning package tailored to a Python beginner, progressing through toolchain, modern C++, memory/lifetime, debugging/testing, engineering, and independent projects. It must contain navigable root documents, measurable phase exits, an AGENTS.md tutor specification, and empty notes, projects, and journal directories.",
       "files": [],
       "expectations": [
         "The generated package contains the four required root navigation documents and references/00_完整学习路线.md.",
         "The route is adapted to a learner coming from Python and includes compilation, debugging, testing, memory/lifetime, and an independent project outcome.",
         "Each phase has observable acceptance criteria rather than only reading or watching targets.",
-        "projects/ and journal/ both exist and contain no files, including no .gitkeep or README.",
-        "Project specifications are outside projects/ and do not provide completed solutions."
+        "projects/, journal/, and notes/ all exist and contain no files, including no .gitkeep or README.",
+        "Project specifications are outside projects/ and do not provide completed solutions.",
+        "An AGENTS.md tutor specification exists, is written in Chinese, covers the notes and journal rules, and contains no unresolved placeholders."
       ]
     },
     {
       "id": 2,
       "prompt": "我要参加超算竞赛，电脑是 Windows 11，平时用 WSL，C++ 只停留在算法竞赛水平。帮我制作一套 HPC 学习资料文件，重点是以后能进入队伍做性能分析和 OpenMP/MPI/CUDA 优化。",
-      "expected_output": "A measurement-first HPC package that starts with engineering C++, Linux/WSL, build/debug tools, CPU/cache and single-core profiling before OpenMP, MPI, CUDA, and competition engineering. Environment-dependent profiling limitations must be qualified and current setup facts must not be fabricated.",
+      "expected_output": "A measurement-first HPC package that starts with engineering C++, Linux/WSL, build/debug tools, CPU/cache and single-core profiling before OpenMP, MPI, CUDA, and competition engineering. Environment-dependent profiling limitations must be qualified, current setup facts must not be fabricated, and AGENTS.md must record the tutoring rules and environment limits.",
       "files": [],
       "expectations": [
         "The main route orders single-core measurement before OpenMP, MPI, CUDA, and cluster competition topics.",
         "The environment guide distinguishes WSL capabilities from native Linux or cluster hardware capabilities and does not claim unverified tools are installed.",
         "The package includes correctness checks, reproducible measurement guidance, and performance-report acceptance criteria.",
         "Advanced cluster and CUDA material is marked for later use rather than front-loaded.",
-        "projects/ and journal/ both exist and are completely empty."
+        "projects/, journal/, and notes/ all exist and are completely empty.",
+        "AGENTS.md records the tutoring rules and qualifies environment-dependent limitations without inventing setup facts."
       ]
     },
     {
       "id": 3,
       "prompt": "我两个月后考大学英语四级，目前模拟成绩大约 390 分，每天能学 90 分钟。请给我生成一套本地辅助学习文件，重点提高听力和阅读，但写作翻译也不能放弃。",
-      "expected_output": "A CET-4 package organized around diagnosis, listening/reading remediation, integrated writing/translation practice, timed simulations, and error-driven adjustment. Current exam facts should be sourced officially or marked for verification, and the package must not redistribute copyrighted papers or promise a score.",
+      "expected_output": "A CET-4 package organized around diagnosis, listening/reading remediation, integrated writing/translation practice, timed simulations, and error-driven adjustment. Current exam facts should be sourced officially or marked for verification, and the package must not redistribute copyrighted papers or promise a score, and it includes an exam-adapted AGENTS.md tutor specification.",
       "files": [],
       "expectations": [
         "The plan fits an eight-week, 90-minute-per-day constraint and prioritizes listening and reading without omitting writing and translation.",
         "The route includes diagnostics, timed practice, an error taxonomy, full simulations, and adjustment rules.",
         "The package uses language/exam-appropriate tools and does not contain programming-specific boilerplate.",
         "It does not promise a target score or redistribute copyrighted test papers, and current exam rules are sourced or flagged for verification.",
-        "projects/ and journal/ both exist and are completely empty."
+        "projects/, journal/, and notes/ all exist and are completely empty.",
+        "AGENTS.md adapts the tutoring loop to exam preparation, with review notes suited to listening/reading/writing practice."
       ]
     },
     {
       "id": 4,
       "prompt": "我以后准备学机器学习，但线性代数基础很弱。请制作一套四个月的线性代数学习资料包，既要理解概念，也要能推导和做题，后期联系一点机器学习应用。",
-      "expected_output": "A four-month mathematics package with prerequisite diagnosis, geometric and algebraic representations, computation, proofs/derivations, cumulative problem solving, and a clearly optional late machine-learning application track.",
+      "expected_output": "A four-month mathematics package with prerequisite diagnosis, geometric and algebraic representations, computation, proofs/derivations, cumulative problem solving, and a clearly optional late machine-learning application track, plus a mathematics-adapted AGENTS.md tutor specification.",
       "files": [],
       "expectations": [
         "The route explicitly maps prerequisites and balances intuition, formal definitions, calculation, derivation/proof, and problem solving.",
         "Machine-learning applications appear after the required linear-algebra spine and do not replace foundations.",
         "Acceptance criteria require independent solutions and explanations, not only completion of chapters or videos.",
         "Calculator, CAS, or programming use is addressed where appropriate.",
-        "projects/ and journal/ both exist and are completely empty."
+        "projects/, journal/, and notes/ all exist and are completely empty.",
+        "AGENTS.md adapts the tutoring loop to mathematics, requiring independent derivation and verified problem solving."
       ]
     },
     {
